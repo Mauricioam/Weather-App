@@ -2,7 +2,7 @@ export function timeConverter(unixTime){
     let variable = new Date(unixTime * 1000);
     let hour = variable.getHours();
     let min = variable.getMinutes();
-    let time = `${hour}:${min}`
+    let time = `${hour}:${min}0`
     return time;
 
 }
@@ -10,7 +10,9 @@ export function timeConverter(unixTime){
 export function dateConverter(unixTime){
     let variable = new Date(unixTime * 1000);
     let date = variable.getDate();
-    return date;
+    let month = variable.getMonth();
+    let fullTime =`${date}/${month}`
+    return fullTime ;
 }
 
 

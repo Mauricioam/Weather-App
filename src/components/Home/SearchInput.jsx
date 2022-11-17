@@ -27,12 +27,12 @@ export default function SearchInput() {
 
   return (
     <>
-      <form class="d-flex" role="search" onSubmit={handleSubmit}>
+      <form className="d-flex"  role="search" onSubmit={handleSubmit}>
         <button class="btn btn-outline-warning" type="submit">
           Search
         </button>
         <input
-          class="form-control ms-2 w-50"
+          class="form-control ms-2"
           type="search"
           onChange={handleInputSearchBar}
           placeholder="Enter city..."
