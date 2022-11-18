@@ -37,7 +37,7 @@ return(
   <context.Provider value={setCity}>
    <Navbar/>
   </context.Provider>
-  <div className="d-flex align-items-center justify-content-center">
+  <div className="card-container pt-2 d-flex align-items-center justify-content-center">
  {weather.length > 0 ? (<Card
      name={weather[0].data.name}
      country={weather[0].data.sys.country} 
