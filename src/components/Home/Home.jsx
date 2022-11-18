@@ -18,16 +18,19 @@ export default function Home() {
 
 
     useEffect(()=>{
-     let present = axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${city && city[0].lat}&lon=${city && city[0].lon}&appid=${API_KEY}&units=metric`)
-     let forecast =  axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${city && city[0].lat}&lon=${city && city[0].lon}&cnt=8&appid=${API_KEY}&units=metric`)
-     Promise.all([present,forecast]).then(response => setWeather(response))
+      function fetchData(){
+        if(city !== undefined){
+          let present = axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${city && city[0]?.lat}&lon=${city && city[0]?.lon}&appid=${API_KEY}&units=metric`)
+          let forecast =  axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${city && city[0]?.lat}&lon=${city && city[0]?.lon}&cnt=8&appid=${API_KEY}&units=metric`)
+          Promise.all([present,forecast]).then(response => setWeather(response)).catch(error => alert("noasdasd"))
+        }
+      }
+      fetchData();
     },[city])
   
 
 
 
-
-console.log(weather.length > 0 && weather)
 return(
   <>
   <context.Provider value={setCity}>
@@ -48,7 +51,7 @@ return(
      sunrise={weather[0].data.sys.sunrise}
      sunset={weather[0].data.sys.sunset}/>) : <Welcome/>} 
      </div>
-      <div className="d-flex w-100 my-5 ">
+      <div className=" d-flex  w-100 my-5 ">
      {weather.length > 0 ? (weather[1].data.list.map(item => (
       <Forecast
       time={item.dt}

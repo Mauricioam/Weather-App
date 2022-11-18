@@ -4,7 +4,7 @@ import { dateConverter, timeConverter } from "../../utils/timeConverter";
 export function Forecast({ time, temp, icon, max, min }) {
   return (
     <>
-      <div className="container d-flex justify-content-center">           
+      <div className="container d-flex  justify-content-center p-0 m-0">           
            <div className="card">
             <div className="card-body text-center">
               <p>{dateConverter(time)}</p>
