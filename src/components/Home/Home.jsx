@@ -7,6 +7,7 @@ import  Welcome  from "../Welcome/Welcome";
 import { Forecast } from "../Forecast/Forecast";
 import { useEffect } from "react";
 import axios from "axios";
+import image from "../../assets/images/25501.jpg"
 import { API_KEY } from "./SearchInput";
 
 export const context = createContext(null);
@@ -36,7 +37,7 @@ return(
   <context.Provider value={setCity}>
    <Navbar/>
   </context.Provider>
-  <div>
+  <div className="d-flex align-items-center justify-content-center">
  {weather.length > 0 ? (<Card
      name={weather[0].data.name}
      country={weather[0].data.sys.country} 
@@ -51,7 +52,8 @@ return(
      sunrise={weather[0].data.sys.sunrise}
      sunset={weather[0].data.sys.sunset}/>) : <Welcome/>} 
      </div>
-      <div className=" d-flex  w-100 my-5 ">
+     <div className="container">
+      <div className=" d-flex  w-100 py-5">
      {weather.length > 0 ? (weather[1].data.list.map(item => (
       <Forecast
       time={item.dt}
@@ -62,6 +64,7 @@ return(
       />
       
       ))) : ""}
+    </div>
     </div>
   </>
 

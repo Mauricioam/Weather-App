@@ -1,5 +1,6 @@
 import React from "react";
 import { timeConverter,actualDate } from "../../utils/timeConverter";
+import  image  from "../../assets/images/25501.jpg"
 
 
 export function Card({name,country,humidity,feel,current,max,min,pressure,img,description,sunrise,sunset}){
@@ -7,8 +8,8 @@ export function Card({name,country,humidity,feel,current,max,min,pressure,img,de
     
     return(
         <>
-        <div class="container-fluid p-0 d-flex-column justify-content-center text-center">
-        <div className="card">
+        <div class="container-fluid p-0 d-flex-column text-center">
+        <div className="card-container">
         <div className="card-body">
         <h1 className="display-6">{name},<span>{country}</span></h1>
         <p className="fs-4">{description}</p>
