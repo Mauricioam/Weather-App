@@ -23,7 +23,7 @@ export default function Home() {
         if(city !== undefined){
           let present = axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${city && city[0]?.lat}&lon=${city && city[0]?.lon}&appid=${API_KEY}&units=metric`)
           let forecast =  axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${city && city[0]?.lat}&lon=${city && city[0]?.lon}&cnt=8&appid=${API_KEY}&units=metric`)
-          Promise.all([present,forecast]).then(response => setWeather(response)).catch(error => alert("noasdasd"))
+          Promise.all([present,forecast]).then(response => setWeather(response)).catch(error => alert("Please enter a valid city"))
         }
       }
       fetchData();
@@ -52,8 +52,7 @@ return(
      sunrise={weather[0].data.sys.sunrise}
      sunset={weather[0].data.sys.sunset}/>) : <Welcome/>} 
      </div>
-     <div className="container">
-      <div className=" d-flex  w-100 py-5">
+     <div className="forecast-container col-12">
      {weather.length > 0 ? (weather[1].data.list.map(item => (
       <Forecast
       time={item.dt}
@@ -62,10 +61,9 @@ return(
       max={item.main.temp_max}
       min={item.main.temp_min}
       />
-      
       ))) : ""}
-    </div>
-    </div>
+      </div>
+   
   </>
 
 

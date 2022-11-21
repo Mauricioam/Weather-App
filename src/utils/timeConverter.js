@@ -24,3 +24,10 @@ export function actualDate(){
     let fullDate = ` ${date}/${month}/${year}`;
     return fullDate;
 }
+
+export function timeConverterForecast(unixTime){
+    let variable = new Date(unixTime * 1000);
+    let hour = variable.getHours();
+    return `${hour}:00`;
+
+}

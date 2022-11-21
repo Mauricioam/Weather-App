@@ -1,0 +1,11 @@
+.forecast-container{
+    display: flex;
+    background: $bgColorForecast ;
+    background: linear-gradient(180deg, rgba(77,153,231,1) 0%, rgba(233,237,238,1) 100%);
+    
+}
+
+.forecast-card{
+    margin: 4rem 0 4rem 0;
+    border:3px solid #dbd6d5
+}
