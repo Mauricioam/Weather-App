@@ -7,7 +7,6 @@ import  Welcome  from "../Welcome/Welcome";
 import { Forecast } from "../Forecast/Forecast";
 import { useEffect } from "react";
 import axios from "axios";
-import image from "../../assets/images/25501.jpg"
 import { API_KEY } from "./SearchInput";
 
 export const context = createContext(null);

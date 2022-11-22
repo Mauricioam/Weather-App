@@ -1,6 +1,5 @@
 import React from "react";
 import { timeConverter,actualDate } from "../../utils/timeConverter";
-import  image  from "../../assets/images/25501.jpg"
 
 
 export function Card({name,country,humidity,feel,current,max,min,pressure,img,description,sunrise,sunset}){
